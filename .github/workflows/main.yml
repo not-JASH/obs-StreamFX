@@ -164,3 +164,11 @@ jobs:
         CMAKE_BUILD_TYPE: "RelWithDebInfo"
       run: |
         cmake --build "build/ci" --config ${{ env.CMAKE_BUILD_TYPE }} --target StreamFX
+    - name: "Archive Artifacts"
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-artifacts
+        path: |
+          build/ci/your-artifact-folder
+          # Add more paths as needed for other artifacts
+
